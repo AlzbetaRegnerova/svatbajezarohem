@@ -1,2 +1,1 @@
-# svatbajezarohem
-Svatba Bětka a Dejf
+# budemeregnerovi

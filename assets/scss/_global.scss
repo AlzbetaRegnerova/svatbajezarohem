@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Dosis:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap");;
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Roboto:wght@300;400&display=swap');
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: white;
+  color: $black;
+  font-family:'Roboto', sans-serif;
+  font-size: 1.1rem;
+
+  @include flexbox {
+    flex-direction: column;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;  // Explicitně nastavujeme váhu 400 (regular)
+}
+h2 {
+  font-size: 4rem;
+}
+
+
+a {
+  transition: 0.3s;
+  color: $grey;
+  &:hover {
+    color: $gold;
+  }
+}
+p{
+  font-size: 1.9rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;  // Lehčí váha pro normální text
+}
+.and {
+  font-family: "Ms Madi", bolt;
+}
+
+h2 {
+  text-align: center;
+}
