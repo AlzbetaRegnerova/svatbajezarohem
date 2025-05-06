@@ -3,8 +3,8 @@
   top: 0;
   z-index: 10;
   height: 4rem;
-  background-color: #aedda9;
-  color: black;
+  background-color: #edfce8;
+  color: #464648;
   width: 100%;
 
   @include flexbox {
@@ -16,8 +16,7 @@
     width: 90vw;
     max-width: 1200px;
     text-transform: uppercase;
-    font-size: 1rem;    
-    background-color: #aedda9;
+    font-size: 1rem;
 
     @include flexbox {
       flex-direction: row;
@@ -26,45 +25,34 @@
 
     a {
       text-decoration: none;
-      color: $black;  
-      font-family: "Anton", sans-serif;
-      font-weight: 400;
-      font-size: 2rem;
+      color: $grey;
 
       &:hover {
-        color: #898989;
-      }
-
-      // 🎯 Zmenšení textu při zúžení obrazovky
-      @media (max-width: 1024px) {
-        font-size: 1.5rem;
-      }
-
-      @media (max-width: 600px) {
-        font-size: 1.2rem;
+        color: $gold;
       }
     }
 
     li {
       cursor: pointer;
     }
+  }
 
+  // responsive part
+  .nav {
     @include for-size("tablet") {
       display: none;
     }
   }
-
-  .nav.active {
+  .active + .nav {
     display: block;
     position: absolute;
     top: 4rem;
     left: 0;
     width: 100vw;
     margin: 0;
-    background-color: #aedda9;
+    background-color: $black;
     height: 85vh;
     font-size: 1.5rem;
-    color: black;
 
     @include flexbox {
       flex-direction: column;
@@ -72,6 +60,32 @@
     }
   }
 }
+
+  // Skrytí menu na mobilních zařízeních
+  .nav {
+    @include for-size("tablet") {
+      display: none;
+    }
+  }
+
+  // Menu zobrazené po aktivaci třídy .active
+  .nav.active {
+    display: block;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    background-color: $black;
+    height: 85vh;
+    font-size: 1.5rem;
+
+    @include flexbox {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+
 
 // Burger menu tlačítko
 .menuButton {
@@ -88,27 +102,27 @@
     position: absolute;
     top: -0.2rem;
     opacity: 1;
-    fill: $grey;
+    fill: $grey;  /* Tato barva bude pro obě ikony */
     cursor: pointer;
     transition: 0.5s;
 
     &:hover {
-      fill: $gold;
+      fill: $gold;  /* Hover efekt pro změnu barvy při najetí */
     }
   }
 
   .open {
-    opacity: 0;
-    fill: $grey;
+    opacity: 0;  /* Zavírací ikona bude skrytá při zobrazení burger menu */
+    fill: $grey;  /* Tato barva bude pro křížek stejně jako pro burger */
   }
 
   &.active {
     .burger {
-      opacity: 0;
+      opacity: 0;  /* Ikona burgeru bude skrytá, když je aktivní */
     }
 
     .open {
-      opacity: 1;
+      opacity: 1;  /* Ikona křížku se zobrazí */
     }
   }
 }
